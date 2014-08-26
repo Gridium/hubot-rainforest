@@ -16,6 +16,13 @@ Then add this script to the `external-scripts.json`:
 ["hubot-rainforest"]
 ```
 
+You'll need to get your Rainforest token from your [Rainforest settings page](https://app.rainforestqa.com/settings/account), and stick it in an environment variable in your deployment.
+For heroku, that looks like this:
+
+```bash
+$ heroku config:set HUBOT_RAINFOREST_TOKEN <token>
+```
+
 ## Commands
 
 ```
