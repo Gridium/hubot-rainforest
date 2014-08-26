@@ -1,6 +1,6 @@
 {
   "name": "hubot-rainforest",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Hubot plugin that interfaces with Rainforest (https://www.rainforestqa.com/)",
   "main": "index.coffee",
   "scripts": {
