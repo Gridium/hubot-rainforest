@@ -30,15 +30,19 @@ module.exports = (robot) ->
 
     testNames = {}
     refreshTestNames = ->
-        robot.http('https://app.rainforestqa.com/api/1/tests.json?page_size=100')
+        robot.http('https://app.rainforestqa.com/api/1/tests?page_size=1000')
         .header('CLIENT_TOKEN', rainforestToken)
+        .header('Content-Type', 'application/json')
+        .header('User-Agent', 'rainforest-hubot v0.0.1')
         .get() (err, res, body) ->
             for test in JSON.parse(body)
                 testNames[test.id] = test.title
 
     queryRainforestRuns = (callback, numResults=5) ->
-        robot.http('https://app.rainforestqa.com/api/1/runs.json')
+        robot.http('https://app.rainforestqa.com/api/1/runs?page_size=' + numResults)
         .header('CLIENT_TOKEN', rainforestToken)
+        .header('Content-Type', 'application/json')
+        .header('User-Agent', 'rainforest-hubot v0.0.1')
         .get() (err, res, body) ->
             results = JSON.parse(body).sort(compareByCreationDateReversed)[..numResults]
             for result in results
