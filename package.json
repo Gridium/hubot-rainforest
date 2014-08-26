@@ -1,0 +1,27 @@
+{
+  "name": "hubot-rainforest",
+  "version": "0.1.0",
+  "description": "Hubot plugin that interfaces with Rainforest (https://www.rainforestqa.com/)",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gridium/hubot-rainforest"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "rainforest"
+  ],
+  "author": "Ben Straub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gridium/hubot-rainforest/issues"
+  },
+  "homepage": "https://github.com/gridium/hubot-rainforest",
+  "dependencies": {
+    "coffee-script": "^1.7.1"
+  }
+}
