@@ -54,12 +54,10 @@ module.exports = (robot) ->
             oldruns = robot.brain.data.rainforestRuns
             for run in results
                 tests = run.requested_tests.join(', ')
-                oldrunstate = ":anger:"
-                if run.id of oldruns
-                    oldrunstate = oldruns[run.id]
+                oldrunstate = oldruns[run.id]
                 if oldrunstate != run.state
-                    sendToRooms ":palm_tree::palm_tree: Test run #{run.id} [#{tests}]: #{oldrunstate} :point_right: *#{decorateState run.state, run.result}*"+
-                                "\n( https://app.rainforestqa.com/runs/#{run.id}/tests )"
+                    sendToRooms ":palm_tree::palm_tree: [#{tests}] is *#{decorateState run.state, run.result}* "+
+                                "( https://app.rainforestqa.com/runs/#{run.id}/tests )"
                 robot.brain.data.rainforestRuns[run.id] = run.state
 
     robot.brain.data.rainforest ?= {}
