@@ -142,7 +142,7 @@ class RainforestApp
                 msg.reply "Rainforest error: #{error} / #{res} / #{body}" if msg?
             callback json
 
-    getAllTags: (callback, msg) -> @get 'tests/tags.json', msg, callback
+    getAllTags: (callback, msg) -> @get 'tests/tags', msg, callback
 
     getAllTests: (callback, msg) -> @get 'tests?page_size=1000', msg, callback
 
