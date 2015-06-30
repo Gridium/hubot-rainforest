@@ -47,7 +47,7 @@ module.exports = (robot) ->
             else run.state
 
         "#{TREES} Run is *#{state}*\n" +
-            ("\t#{testNames[x]}" for x in run.requested_tests).join('\n') +
+            ("\t#{x}" for x in run.sample_test_titles).join('\n') +
             "\n\thttps://app.rainforestqa.com/runs/#{run.id}/tests"
 
     app = new RainforestApp robot
