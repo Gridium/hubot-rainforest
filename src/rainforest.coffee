@@ -60,6 +60,7 @@ module.exports = (robot) ->
 
     updateStateAndReport = ->
         app.getRuns 10, (results) ->
+            return unless results?
             oldruns = robot.brain.data.rainforestRuns
             for run in results
                 oldrunstate = oldruns[run.id]
